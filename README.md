@@ -69,7 +69,7 @@ ninja
 ---
 
 ## Tested
-termux-app_v0.118.3+github-debug_arm64-v8a.apk 
+termux-app_v0.118.3+github-debug_arm64-v8a.apk UwU
 
 ---
 
