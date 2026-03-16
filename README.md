@@ -17,7 +17,52 @@ pkg uninstall vulkan-loader-generic
 pkg install fish vulkan-loader-android vulkan-tools
 ```
 
+```bash
+echo "exec fish" >> .bashrc
+```
 
+## Check Gpu
+
+```bash
+vulkaninfo | grep deviceName
+```
+
+## Main
+```bash
+git clone https://github.com/DirmdsLab/Real-ESRGAN-ncnn-vulkan-termux.git
+cd Real-ESRGAN-ncnn-vulkan-termux
+git submodule update --init --recursive
+```
+
+```bash
+pkg install cmake clang ninja vulkan-headers glslang
+```
+
+```bash
+mkdir build
+cd build
+cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -G Ninja -DCMAKE_SYSTEM_NAME=Linux -DNCNN_SSE2=OFF -DNCNN_AVX=OFF -DCMAKE_EXE_LINKER_FLAGS="-llog" ../src
+ninja
+```
+
+---
+
+## Running Real-ESRGAN
+
+1. Copy models from the original repo `bin` folder to your build `models` folder:
+
+2. Test
+
+```bash
+./realesrgan-ncnn-vulkan -i input.jpg -o output.png -n realesrgan-x4plus-anime
+```
+
+---
+
+## Tested
+termux-app_v0.118.3+github-debug_arm64-v8a.apk 
+
+---
 
 # Real-ESRGAN ncnn Vulkan
 
