@@ -13,7 +13,6 @@ pkg update && pkg upgrade
 ```
 
 ```bash
-pkg uninstall vulkan-loader-generic
 pkg install fish vulkan-loader-android vulkan-tools
 ```
 
@@ -27,15 +26,25 @@ echo "exec fish" >> .bashrc
 vulkaninfo | grep deviceName
 ```
 
+* If it only shows a CPU device (or no GPU), fix it by removing the generic Vulkan loader and installing the Android-specific loader:
+
+```bash
+pkg uninstall vulkan-loader-generic
+pkg install vulkan-loader-android
+```
+
+* Then check again:
+
 ## Main
+
+```bash
+pkg install git cmake clang ninja vulkan-headers glslang
+```
+
 ```bash
 git clone https://github.com/DirmdsLab/Real-ESRGAN-ncnn-vulkan-termux.git
 cd Real-ESRGAN-ncnn-vulkan-termux
 git submodule update --init --recursive
-```
-
-```bash
-pkg install cmake clang ninja vulkan-headers glslang
 ```
 
 ```bash
