@@ -1,3 +1,24 @@
+# Real-ESRGAN NCNN Vulkan on Termux (Android)
+## Why Use PRoot Distro?
+Still clean :v
+
+## Setup proot termux
+```bash
+proot-distro install --override-alias termux-vulkan-anime termux
+proot-distro login termux-vulkan-anime
+```
+
+```bash
+pkg update && pkg upgrade
+```
+
+```bash
+pkg uninstall vulkan-loader-generic
+pkg install fish vulkan-loader-android vulkan-tools
+```
+
+
+
 # Real-ESRGAN ncnn Vulkan
 
 ![CI](https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan/workflows/CI/badge.svg)
